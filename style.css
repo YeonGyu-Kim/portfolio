@@ -1,0 +1,251 @@
+@import "reset.css";
+
+/* Global */
+:root {
+  /* Color */
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-dark-gray: #4d4d4d;
+  --color-light-gray: #615f5f;
+  --color-purple: #4d3980;
+  --color-dark-purple: #42366d;
+  --color-blue: #73aace;
+  --color-orange: #feb546;
+  --color-yellow: #f1dec0;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 20px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Size */
+  --size-border-radius: 4px;
+}
+
+/* Global */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--color-light-white);
+  font-family: "Open Sans", sans-serif;
+  cursor: default;
+}
+
+h1 {
+  font-size: var(--font-large);
+  font-weight: 700;
+  margin: 8px 0px;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: 600;
+  margin: 16px 0px;
+}
+
+h3 {
+  font-size: (var(--font-regular));
+  font-weight: 400;
+  margin: 8px 0px;
+}
+
+p {
+  font-size: (var(--font-regular));
+  font-weight: 600;
+  margin: 20px 0px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* Navbar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  background-color: var(--color-purple);
+  color: white;
+  padding: 20px;
+}
+
+.navbar__logo {
+  font-size: var(--font-medium);
+  font-weight: 600;
+}
+
+.navbar__menu {
+  display: flex;
+  font-size: var(--font-regular);
+}
+
+.navbar__menu__item {
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: var(--size-border-radius);
+}
+
+.navbar__menu__item:hover,
+.home__contact:hover {
+  background-color: var(--color-dark-purple);
+}
+
+.navbar__menu__item.active {
+  border: 1px solid white;
+}
+
+/* Home */
+#home {
+  background: url("img/sky.jpg") top/cover;
+  padding: 50px;
+  text-align: center;
+  color: white;
+}
+
+.home__avatar {
+  width: 250px;
+  height: 250px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.home__title {
+  text-align: center;
+  line-height: 60px;
+}
+
+.home__contact {
+  font-size: 15px;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+  border: 2px solid white;
+  border-radius: var(--size-border-radius);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* About */
+.section {
+  padding: 50px;
+  margin: auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.about__majors {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 0px;
+}
+
+.major__icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  font-size: 100px;
+  border: 2px solid var(--color-blue);
+  border-radius: 50%;
+  color: var(--color-blue);
+}
+
+.major__icon i {
+  transition: all 0.3s ease-in-out;
+}
+
+.major__icon i:hover {
+  color: var(--color-purple);
+  transform: scale(1.1);
+}
+
+.major__title {
+  font-size: var(--font-medium);
+  font-weight: 600;
+  margin: 20px 0px;
+}
+
+.major__title,
+.major__description {
+  color: var(--color-dark-grey);
+}
+
+.about__jobs {
+  display: flex;
+}
+
+.job {
+  color: var(--color-light-grey);
+}
+
+#skills {
+  padding: 100px 80px;
+  background-color: var(--color-yellow);
+}
+
+.skillset {
+  display: flex;
+  color: whitesmoke;
+  margin-top: 50px;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-light-gray);
+  margin-bottom: 32px;
+}
+
+.skill__bar-percent {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-orange);
+}
+
+.skillset__left {
+  background-color: var(--color-dark-gray);
+  flex-basis: 60%;
+  padding: 20px 40px;
+}
+
+.skillset__right {
+  background-color: gray;
+  flex-basis: 40%;
+}
+
+.skillset__title {
+  font-size: var(--font-regular);
+  font-weight: 600;
+  color: black;
+}
+
+.tools {
+  background-color: var(--color-light-gray);
+}
+
+.tools__list li {
+  margin: 10px 0px;
+}
+.tools,
+.etc {
+  padding: 20px;
+}
