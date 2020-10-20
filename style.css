@@ -106,6 +106,14 @@ button {
   border: 1px solid var(--color-light-white);
 }
 
+.navbar__toggle-btn {
+  position: absolute;
+  right: 32px;
+  font-size: var(--font-medium);
+  color: var(--color-light-white);
+  display: none;
+}
+
 /* Home */
 #home {
   background: url("img/sky.jpg") top/cover;
@@ -138,10 +146,10 @@ button {
 }
 
 /* About */
-.section {
-  padding: 50px;
+.section__container {
   margin: auto;
-  max-width: 80%;
+  max-width: 1200px;
+  padding: 50px;
   text-align: center;
 }
 
@@ -191,6 +199,7 @@ button {
   color: var(--color-light-grey);
 }
 
+/* Skills */
 #skills {
   padding: 100px 80px;
   background-color: var(--color-yellow);
@@ -372,4 +381,38 @@ button {
 
 .contact__links:hover {
   transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+  }
+  .about__majors {
+    flex-direction: column;
+    align-items: center;
+  }
+  .major {
+    margin-bottom: 50px;
+  }
+  .skillset {
+    flex-direction: column;
+  }
+  .project {
+    flex-grow: 1;
+  }
+  .testmonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
