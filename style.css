@@ -72,13 +72,22 @@ button {
 
 /* Navbar */
 #navbar {
+  position: fixed;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
-  background-color: var(--color-purple);
+  background-color: transparent;
   color: var(--color-light-white);
-  padding: 20px;
+  padding: 18px;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+}
+
+#navbar.navbar-dark {
+  background-color: var(--color-purple);
+  padding: 12px;
 }
 
 .navbar__logo {
@@ -120,6 +129,7 @@ button {
   padding: 50px;
   text-align: center;
   color: var(--color-light-white);
+  padding-top: 110px;
 }
 
 .home__avatar {
