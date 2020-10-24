@@ -2,7 +2,7 @@
 
 const scrollIntoView = (link) => {
     const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: "smooth", block:"center"});
+    scrollTo.scrollIntoView({behavior: "smooth", block:"start"});
 
 }
 
@@ -31,13 +31,23 @@ menu.addEventListener("click", (event) => {
 if(link === null){
     return;
 }else{
-scrollIntoView(link);
+    menu.classList.remove("open");
+    scrollIntoView(link);
 }
     // Move active box
     const activeBtn = document.querySelector(".navbar__menu__item.active");    
     activeBtn.classList.remove('active');
     target.classList.add('active');
 });
+
+//Navbar toggle button for small screen
+const toggleButton = document.querySelector(".navbar__toggle-btn");
+toggleButton.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    
+})
+
+
 
 //Handle click on "contact me" button on home
 const contactMe = document.querySelector(".home__contact");

@@ -95,7 +95,7 @@ button {
   font-weight: 600;
 }
 
-.navbar__menu {
+.navbar__menu-list {
   display: flex;
   font-size: var(--font-regular);
 }
@@ -354,6 +354,7 @@ button {
 .project__description h3 {
   text-decoration: underline;
   font-size: var(--font-regular);
+  color: var(--color-orange);
 }
 
 .project__description span {
@@ -424,6 +425,7 @@ button {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-dark-purple);
   }
   .navbar__menu {
     flex-direction: column;
@@ -431,6 +433,14 @@ button {
     text-align: center;
     margin-top: 10px;
     display: none;
+  }
+  .navbar__menu-list {
+    flex-direction: column;
+  }
+  .navbar__menu.open {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
   .about__majors {
     flex-direction: column;
