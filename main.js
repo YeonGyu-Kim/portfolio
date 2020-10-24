@@ -18,7 +18,7 @@ document.addEventListener("scroll", () => {
         navBar.classList.remove('navbar-dark');
     }    
     
-})
+});
 
 
 // Handle scrolling when tapping on the navbar menu
@@ -37,12 +37,33 @@ scrollIntoView(link);
     const activeBtn = document.querySelector(".navbar__menu__item.active");    
     activeBtn.classList.remove('active');
     target.classList.add('active');
-})
+});
 
 //Handle click on "contact me" button on home
 const contactMe = document.querySelector(".home__contact");
 contactMe.addEventListener("click", (event)=> {    
    scrollIntoView("#contact")
     
-})
+});
+
+// Make home slowly fade to transparent when scrolling down
+const home = document.querySelector(".home__container");
+const hoemHeight = home.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+    home.style.opacity = 1 - window.scrollY / hoemHeight;
+
+    //Show "arrow up" button when scrolling down
+    const deleteButton = document.querySelector(".arrow-btn");
+    if(window.scrollY > hoemHeight/2){
+        deleteButton.classList.add("visible");
+        deleteButton.addEventListener("click", () => {
+            scrollIntoView("#home");
+        })
+    }else{
+        deleteButton.classList.remove("visible");
+    }
+    
+});
+
+
 

@@ -121,6 +121,7 @@ button {
   font-size: var(--font-medium);
   color: var(--color-light-white);
   display: none;
+  cursor: pointer;
 }
 
 /* Home */
@@ -130,6 +131,11 @@ button {
   text-align: center;
   color: var(--color-light-white);
   padding-top: 110px;
+}
+
+.home__container.blur {
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
 }
 
 .home__avatar {
@@ -391,6 +397,24 @@ button {
 
 .contact__links:hover {
   transform: scale(1.2);
+}
+
+/* Arrow up button */
+.arrow-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: var(--font-large);
+  color: var(--color-blue);
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow-btn.visible {
+  opacity: 1;
+  pointer-events: visible;
 }
 
 @media screen and (max-width: 768px) {
