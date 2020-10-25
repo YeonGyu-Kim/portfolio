@@ -75,5 +75,33 @@ document.addEventListener("scroll", () => {
     
 });
 
+const workButton = document.querySelector(".work__categories");
+const projectButton = document.querySelector(".work__projects");
+const projects = projectButton.querySelectorAll(".project");
+workButton.addEventListener("click" , (event) => {
+    const target = event.target;
+    const filter = target.dataset.filter || target.parentNode.dataset.filter;
+    if(filter === null){
+        return;
+    }
+
+    projectButton.classList.add("anim-out");
+    setTimeout(() => {
+        projects.forEach(project => {
+            if(filter === "*" || filter === project.dataset.type ){
+                project.classList.remove("invisible");
+            }else{
+                project.classList.add("invisible");
+            }
+        });
+
+        projectButton.classList.remove("anim-out");
+    },300);
+
+    
+
+    
+});
+
 
 

@@ -315,6 +315,13 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+
+.work__projects.anim-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
 }
 
 .project {
@@ -324,6 +331,10 @@ button {
   padding: 20px;
   background-color: var(--color-dark-white);
   margin: 5px;
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__img {
