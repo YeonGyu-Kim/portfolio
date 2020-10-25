@@ -12,7 +12,7 @@ const navBarHeight = navBar.getBoundingClientRect().height;
 
 document.addEventListener("scroll", () => {
     if(window.scrollY > navBarHeight){
-        navBar.classList.add('navbar-dark')  
+        navBar.classList.add('navbar-dark') ; 
         }
     else {
         navBar.classList.remove('navbar-dark');
@@ -27,17 +27,17 @@ menu.addEventListener("click", (event) => {
     const target = event.target;
     const link = target.dataset.link;
     
-
-if(link === null){
-    return;
-}else{
-    menu.classList.remove("open");
-    scrollIntoView(link);
-}
-    // Move active box
-    const activeBtn = document.querySelector(".navbar__menu__item.active");    
-    activeBtn.classList.remove('active');
-    target.classList.add('active');
+    
+    if(link === null){
+        return;
+    }else{
+        menu.classList.remove("open");
+        scrollIntoView(link);
+    }
+    // Change to selected button
+    const selectedBtn = document.querySelector(".navbar__menu__item.selected");    
+    selectedBtn.classList.remove('selected');
+    target.classList.add('selected');
 });
 
 //Navbar toggle button for small screen
@@ -45,26 +45,27 @@ const toggleButton = document.querySelector(".navbar__toggle-btn");
 toggleButton.addEventListener("click", () => {
     menu.classList.toggle("open");
     
-})
+});
 
 
 
 //Handle click on "contact me" button on home
 const contactMe = document.querySelector(".home__contact");
-contactMe.addEventListener("click", (event)=> {    
+contactMe.addEventListener("click", ()=> {    
    scrollIntoView("#contact")
+   
     
 });
 
 // Make home slowly fade to transparent when scrolling down
 const home = document.querySelector(".home__container");
-const hoemHeight = home.getBoundingClientRect().height;
+const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
-    home.style.opacity = 1 - window.scrollY / hoemHeight;
+    home.style.opacity = 1 - window.scrollY / homeHeight;
 
-    //Show "arrow up" button when scrolling down
+    // Show "arrow up" button when scrolling down
     const deleteButton = document.querySelector(".arrow-btn");
-    if(window.scrollY > hoemHeight/2){
+    if(window.scrollY > homeHeight/2){
         deleteButton.classList.add("visible");
         deleteButton.addEventListener("click", () => {
             scrollIntoView("#home");
@@ -75,6 +76,7 @@ document.addEventListener("scroll", () => {
     
 });
 
+// Project filtering
 const workButton = document.querySelector(".work__categories");
 const projectButton = document.querySelector(".work__projects");
 const projects = projectButton.querySelectorAll(".project");
@@ -98,9 +100,10 @@ workButton.addEventListener("click" , (event) => {
         projectButton.classList.remove("anim-out");
     },300);
 
-    
-
-    
+    // Change to selected button
+    const selectedBtn = document.querySelector(".category__btn.selected");
+    selectedBtn.classList.remove("selected");
+    target.classList.add("selected");
 });
 
 
