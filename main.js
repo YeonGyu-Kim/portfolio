@@ -21,6 +21,7 @@ document.addEventListener("scroll", () => {
 });
 
 
+
 // Handle scrolling when tapping on the navbar menu
 const menu = document.querySelector(".navbar__menu");
 menu.addEventListener("click", (event) => {
@@ -31,7 +32,6 @@ menu.addEventListener("click", (event) => {
     if(link === null){
         return;
     }else{
-        menu.classList.remove("open");
         scrollIntoView(link);
     }
     // Change to selected button
