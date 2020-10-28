@@ -81,8 +81,8 @@ const workButton = document.querySelector(".work__categories");
 const projectButton = document.querySelector(".work__projects");
 const projects = projectButton.querySelectorAll(".project");
 workButton.addEventListener("click" , (event) => {
-    const target = event.target;
-    const filter = target.dataset.filter || target.parentNode.dataset.filter;
+    const target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+    const filter = target.dataset.filter;
     if(filter === null){
         return;
     }
@@ -104,6 +104,7 @@ workButton.addEventListener("click" , (event) => {
     const selectedBtn = document.querySelector(".category__btn.selected");
     selectedBtn.classList.remove("selected");
     target.classList.add("selected");
+    
 });
 
 
